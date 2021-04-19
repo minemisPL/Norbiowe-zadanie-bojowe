@@ -15,6 +15,7 @@ public class MyPluginUwU implements CommandExecutor, Listener {
 
     public long logTime;
     public String cmd1 = "showtime";
+    public String cmd2 = "gitujemy";
 
     @EventHandler
     public void onLogin(PlayerJoinEvent event){
@@ -31,6 +32,10 @@ public class MyPluginUwU implements CommandExecutor, Listener {
                 if (cmd.getName().equalsIgnoreCase(cmd1)){
                     player.sendMessage("Time played: " + getTime());
                 }
+
+                if (cmd.getName().equalsIgnoreCase(cmd2)){
+                    gitTest(player);
+                }
         return false;
     }
 
@@ -42,12 +47,13 @@ public class MyPluginUwU implements CommandExecutor, Listener {
                 TimeUnit.MILLISECONDS.toSeconds(currentTime) -
                         TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(currentTime))
         );
-
         //long minutes = TimeUnit.MILLISECONDS.toMinutes(currentTime);
         //long seconds = TimeUnit.MILLISECONDS.toSeconds(currentTime);
         //int seconds = (int) ((currentTime / 1000) % 60);
         //int minutes = (int) (currentTime / 60000);
-
+    }
+    public void gitTest(Player player){
+        player.sendMessage("Wszystko jest gites ogolnie ziomek");
     }
 
 
