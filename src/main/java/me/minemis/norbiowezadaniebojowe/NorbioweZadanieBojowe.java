@@ -15,8 +15,6 @@ public final class NorbioweZadanieBojowe extends JavaPlugin implements Listener 
         PluginCommand showtime = this.getCommand("showtime");
         PluginManager pm = this.getServer().getPluginManager();
 
-        //fghjfjgj
-
         if (showtime == null) {
             this.getPluginLoader().disablePlugin(this);
             return;
