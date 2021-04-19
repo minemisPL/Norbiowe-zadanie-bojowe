@@ -1,15 +1,15 @@
-package me.minemis.norbiowezadaniebojowe.Listeners;
+package me.minemis.norbiowezadaniebojowe.listeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class OnLogin implements Listener {
+public class PlayerJoin implements Listener {
 
     private static long logTime;
 
     @EventHandler
-    public void onLogin(PlayerJoinEvent event){
+    public void onPlayerJoin(PlayerJoinEvent event){
         logTime = System.currentTimeMillis();
     }
 

@@ -1,8 +1,10 @@
 package me.minemis.norbiowezadaniebojowe;
 
-import me.minemis.norbiowezadaniebojowe.Commands.MyPluginUwU;
-import me.minemis.norbiowezadaniebojowe.Listeners.OnLogin;
+import me.minemis.norbiowezadaniebojowe.commands.MyPluginUwU;
+import me.minemis.norbiowezadaniebojowe.listeners.PlayerJoin;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.event.Listener;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -10,16 +12,18 @@ public final class NorbioweZadanieBojowe extends JavaPlugin implements Listener 
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-        MyPluginUwU myPluginUwU = new MyPluginUwU();
-        OnLogin onLogin = new OnLogin();
+        PluginCommand showtime = this.getCommand("showtime");
+        PluginManager pm = this.getServer().getPluginManager();;
 
-        getCommand(myPluginUwU.cmd1).setExecutor(myPluginUwU);
-        getServer().getPluginManager().registerEvents(onLogin,this);
+        if (showtime == null) {
+            this.getPluginLoader().disablePlugin(this);
+            return;
+        }
+
+        showtime.setExecutor(new MyPluginUwU());
+        pm.registerEvents(new PlayerJoin(), this);
     }
 
     @Override
-    public void onDisable() {
-        // Plugin shutdown logic
-    }
+    public void onDisable() {}
 }
