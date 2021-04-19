@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.TimeUnit;
 
-public class MyPluginUwU implements CommandExecutor, Listener {
+public class MyPluginUwU implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, String[] args){
