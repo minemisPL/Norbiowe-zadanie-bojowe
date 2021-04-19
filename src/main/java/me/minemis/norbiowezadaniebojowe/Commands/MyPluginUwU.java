@@ -15,7 +15,7 @@ public class MyPluginUwU implements CommandExecutor, Listener {
 
     public long logTime;
     public String cmd1 = "showtime";
-    public String cmd2 = "gitujemy";
+    public String cmd2 = "git";
 
     @EventHandler
     public void onLogin(PlayerJoinEvent event){
