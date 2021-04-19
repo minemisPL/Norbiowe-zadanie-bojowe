@@ -7,6 +7,3 @@ commands:
   showtime:
     description: Shows how much time has passed since Player logged in.
     usage: /showtime
-  git:
-    description: Some git test
-    usage: /git

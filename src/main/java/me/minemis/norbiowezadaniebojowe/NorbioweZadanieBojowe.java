@@ -1,11 +1,10 @@
 package me.minemis.norbiowezadaniebojowe;
 
 import me.minemis.norbiowezadaniebojowe.Commands.MyPluginUwU;
-import org.bukkit.command.Command;
+import me.minemis.norbiowezadaniebojowe.Listeners.OnLogin;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Objects;
 
 public final class NorbioweZadanieBojowe extends JavaPlugin implements Listener {
 
@@ -13,8 +12,10 @@ public final class NorbioweZadanieBojowe extends JavaPlugin implements Listener 
     public void onEnable() {
         // Plugin startup logic
         MyPluginUwU myPluginUwU = new MyPluginUwU();
+        OnLogin onLogin = new OnLogin();
 
         getCommand(myPluginUwU.cmd1).setExecutor(myPluginUwU);
+        getServer().getPluginManager().registerEvents(onLogin,this);
     }
 
     @Override
