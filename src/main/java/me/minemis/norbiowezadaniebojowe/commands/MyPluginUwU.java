@@ -20,13 +20,13 @@ public class MyPluginUwU implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        player.sendMessage("Time played counted: " + getTime());
+        player.sendMessage("Time played counted: " + getTime(player));
 
         return true;
     }
 
-    private String getTime() {
-        long currentTime = System.currentTimeMillis() - PlayerJoin.getLogTime();
+    private String getTime(Player player) {
+        long currentTime = System.currentTimeMillis() - PlayerJoin.getLogTime(player);
         long sek = TimeUnit.MILLISECONDS.toSeconds(currentTime) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(currentTime));
 
         return String.format("%02d min, %02d sec", TimeUnit.MILLISECONDS.toMinutes(currentTime), sek);
