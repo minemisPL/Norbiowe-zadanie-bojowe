@@ -13,7 +13,9 @@ public final class NorbioweZadanieBojowe extends JavaPlugin implements Listener 
     @Override
     public void onEnable() {
         PluginCommand showtime = this.getCommand("showtime");
-        PluginManager pm = this.getServer().getPluginManager();;
+        PluginManager pm = this.getServer().getPluginManager();
+
+        //fghjfjgj
 
         if (showtime == null) {
             this.getPluginLoader().disablePlugin(this);
@@ -25,5 +27,7 @@ public final class NorbioweZadanieBojowe extends JavaPlugin implements Listener 
     }
 
     @Override
-    public void onDisable() {}
+    public void onDisable() {
+
+    }
 }
