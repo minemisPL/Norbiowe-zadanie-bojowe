@@ -1,5 +1,7 @@
 package me.minemis.norbiowezadaniebojowe.listeners;
 
+import me.minemis.norbiowezadaniebojowe.system.DataManager;
+import me.minemis.norbiowezadaniebojowe.system.PlayerCache;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,14 +12,11 @@ import java.util.Map;
 
 public class PlayerJoin implements Listener {
 
-    private static Map<String, Long> logTime = new HashMap<>();
-
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event){
-        logTime.put(event.getPlayer().getName(), System.currentTimeMillis());
+        PlayerCache playerCache = DataManager.getInstance().getPlayerCache(event.getPlayer());
+
+        playerCache.setLastLogin(System.currentTimeMillis());
     }
 
-    public static long getLogTime(Player player) {
-        return logTime.get(player.getName());
-    }
 }
